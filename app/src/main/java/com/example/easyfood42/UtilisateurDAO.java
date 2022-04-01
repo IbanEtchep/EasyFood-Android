@@ -2,6 +2,7 @@ package com.example.easyfood42;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.util.Log;
 
 import java.util.ArrayList;
 
