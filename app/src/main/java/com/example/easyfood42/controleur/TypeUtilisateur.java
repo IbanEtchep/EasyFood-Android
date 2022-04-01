@@ -1,6 +1,7 @@
 package com.example.easyfood42.controleur;
 
 public class TypeUtilisateur {
+
     private long idTU;
     private String libelleTU;
 

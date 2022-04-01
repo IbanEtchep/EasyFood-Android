@@ -36,6 +36,7 @@ public class BdSQLiteOpenHelper extends SQLiteOpenHelper {
 		db.execSQL("insert into type_utilisateur (idTU,libelleTU) values(1,'client');");
 		db.execSQL("insert into type_utilisateur (idTU,libelleTU) values(2,'restaurateur');");
 		db.execSQL("insert into type_utilisateur (idTU,libelleTU) values(3,'moderateur');");
+		db.execSQL("insert into type_utilisateur (idTU,libelleTU) values(4,'administrateur');");
 
 
 		String mdpChiffre = BdSQLiteOpenHelper.md5("motdepasse");

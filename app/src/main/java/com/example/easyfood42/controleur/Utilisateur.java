@@ -6,12 +6,24 @@ public class Utilisateur {
 	private long idU;
 	private String mailU;
 	private String passwd;
+	private String pseudoU;
+	private String nomU;
+	private String numAdrU;
+	private String nomAdrU;
+	private String cpU;
+	private String villeU;
 	private long idTU;
 
-	public Utilisateur(long idU, String mailU, String passwd, long idTU) {
+	public Utilisateur(long idU, String mailU, String passwd, String pseudoU, String nomU, String numAdrU, String nomAdrU, String cpU, String villeU, long idTU) {
 		this.idU = idU;
 		this.mailU = mailU;
 		this.passwd = passwd;
+		this.pseudoU = pseudoU;
+		this.nomU = nomU;
+		this.numAdrU = numAdrU;
+		this.nomAdrU = nomAdrU;
+		this.cpU = cpU;
+		this.villeU = villeU;
 		this.idTU = idTU;
 	}
 
@@ -39,22 +51,60 @@ public class Utilisateur {
 		this.passwd = passwd;
 	}
 
+	public String getPseudoU() {
+		return pseudoU;
+	}
+
+	public void setPseudoU(String pseudoU) {
+		this.pseudoU = pseudoU;
+	}
+
+	public String getNomU() {
+		return nomU;
+	}
+
+	public void setNomU(String nomU) {
+		this.nomU = nomU;
+	}
+
+	public String getNumAdrU() {
+		return numAdrU;
+	}
+
+	public void setNumAdrU(String numAdrU) {
+		this.numAdrU = numAdrU;
+	}
+
+	public String getNomAdrU() {
+		return nomAdrU;
+	}
+
+	public void setNomAdrU(String nomAdrU) {
+		this.nomAdrU = nomAdrU;
+	}
+
+	public String getCpU() {
+		return cpU;
+	}
+
+	public void setCpU(String cpU) {
+		this.cpU = cpU;
+	}
+
+	public String getVilleU() {
+		return villeU;
+	}
+
+	public void setVilleU(String villeU) {
+		this.villeU = villeU;
+	}
+
 	public long getIdTU() {
 		return idTU;
 	}
 
 	public void setIdTU(long idTU) {
 		this.idTU = idTU;
-	}
-
-	@Override
-	public String toString() {
-		return "Utilisateur{" +
-				"idU=" + idU +
-				", mailU='" + mailU + '\'' +
-				", passwd='" + passwd + '\'' +
-				", idTU=" + idTU +
-				'}';
 	}
 
 	public boolean verifPasswd(String mdpClair){
