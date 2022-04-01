@@ -8,17 +8,19 @@ public class Utilisateur {
 	private String passwd;
 	private String pseudoU;
 	private String nomU;
+	private String prenomU;
 	private String numAdrU;
 	private String nomAdrU;
 	private String cpU;
 	private String villeU;
 	private long idTU;
 
-	public Utilisateur(long idU, String mailU, String passwd, String pseudoU, String nomU, String numAdrU, String nomAdrU, String cpU, String villeU, long idTU) {
+	public Utilisateur(long idU, String mailU, String passwd, String pseudoU, String nomU, String prenomU, String numAdrU, String nomAdrU, String cpU, String villeU, long idTU) {
 		this.idU = idU;
 		this.mailU = mailU;
 		this.passwd = passwd;
 		this.pseudoU = pseudoU;
+		this.pseudoU = prenomU;
 		this.nomU = nomU;
 		this.numAdrU = numAdrU;
 		this.nomAdrU = nomAdrU;
@@ -65,6 +67,14 @@ public class Utilisateur {
 
 	public void setNomU(String nomU) {
 		this.nomU = nomU;
+	}
+
+	public String getPrenomU() {
+		return prenomU;
+	}
+
+	public void setPrenomU(String prenomU) {
+		this.prenomU = prenomU;
 	}
 
 	public String getNumAdrU() {

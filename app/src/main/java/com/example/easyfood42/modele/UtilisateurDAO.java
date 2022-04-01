@@ -22,8 +22,12 @@ public class UtilisateurDAO {
 
 	public Utilisateur getUtilisateurByMail(String mailU){
 		Utilisateur unUtil = null;
+		//, String nomU, String numAdrU, String nomAdrU, String cpU, String villeU, long idTU) {
+		String sql =
+				"select idU, mailU, passwd, pseudoU, nomU, numAdrU, nomAdrU, cpU, villeU, idTu " +
+				"from utilisateur where mailU='"+mailU+"';";
 		Cursor curseur;
-		curseur = accesBD.getReadableDatabase().rawQuery("select * from utilisateur where mailU='"+mailU+"';",null);
+		curseur = accesBD.getReadableDatabase().rawQuery(sql ,null);
 		if (curseur.getCount() > 0) {
 			curseur.moveToFirst();
 			unUtil = new Utilisateur(
@@ -36,7 +40,8 @@ public class UtilisateurDAO {
 					curseur.getString(6),
 					curseur.getString(7),
 					curseur.getString(8),
-					curseur.getLong(9)
+					curseur.getString(9),
+					curseur.getLong(10)
 			);
 		}
 		return getTypedUser(unUtil);

@@ -17,7 +17,14 @@ public class BdSQLiteOpenHelper extends SQLiteOpenHelper {
 	private String table_utilisateur="create table utilisateur ("
 			+ "idU INTEGER PRIMARY KEY AUTOINCREMENT,"
 			+ "mailU TEXT NOT NULL,"
+			+ "pseudoU TEXT,"
 			+ "passwd TEXT NOT NULL,"
+			+ "nomU TEXT,"
+			+ "prenomU TEXT,"
+			+ "numAdrU TEXT,"
+			+ "nomAdrU TEXT,"
+			+ "cpU TEXT,"
+			+ "villeU TEXT,"
 			+ "idTU INTEGER,"
 			+ "foreign key (idTU) references type_utilisateur(idTU));";
 
