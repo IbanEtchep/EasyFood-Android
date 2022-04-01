@@ -1,6 +1,6 @@
-package com.example.easyfood42;
+package com.example.easyfood42.controleur;
 
-import android.util.Log;
+import com.example.easyfood42.modele.BdSQLiteOpenHelper;
 
 public class Utilisateur {
 	private long idU;

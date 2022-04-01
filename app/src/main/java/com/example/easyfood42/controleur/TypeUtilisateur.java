@@ -1,4 +1,4 @@
-package com.example.easyfood42;
+package com.example.easyfood42.controleur;
 
 public class TypeUtilisateur {
     private long idTU;

@@ -1,4 +1,4 @@
-package com.example.easyfood42;
+package com.example.easyfood42.controleur;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.example.easyfood42.R;
+import com.example.easyfood42.modele.TypeUtilisateurDAO;
+import com.example.easyfood42.modele.UtilisateurDAO;
 
 public class MainActivity extends AppCompatActivity {
     private Utilisateur utilConnecte;
