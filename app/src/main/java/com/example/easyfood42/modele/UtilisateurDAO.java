@@ -1,10 +1,10 @@
-package com.example.easyfood42;
+package com.example.easyfood42.modele;
 
 import android.content.Context;
 import android.database.Cursor;
 import android.util.Log;
 
-import java.util.ArrayList;
+import com.example.easyfood42.controleur.Utilisateur;
 
 public class UtilisateurDAO {
 
