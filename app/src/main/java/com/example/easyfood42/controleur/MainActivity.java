@@ -33,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 utilConnecte = unUtilDAO.getUtilisateurByMail(et_mailU.getText().toString());
-                if (utilConnecte.verifPasswd(et_passwd.getText().toString())){
+
+                if (utilConnecte != null && utilConnecte.verifPasswd(et_passwd.getText().toString())){
                     Log.d("testLog","utilisateur reconnu. L'utilisateur connecté est stocké dans utilConnecte");
                     TypeUtilisateurDAO unTUDAO = new TypeUtilisateurDAO(MainActivity.this);
                     TypeUtilisateur leTypeUtil = unTUDAO.getTypeUtilisateurById(utilConnecte.getIdTU());
