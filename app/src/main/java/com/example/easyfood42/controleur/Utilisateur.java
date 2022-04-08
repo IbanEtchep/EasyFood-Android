@@ -1,5 +1,7 @@
 package com.example.easyfood42.controleur;
 
+import android.util.Log;
+
 import com.example.easyfood42.modele.BdSQLiteOpenHelper;
 
 public class Utilisateur {
@@ -15,12 +17,12 @@ public class Utilisateur {
 	private String villeU;
 	private long idTU;
 
-	public Utilisateur(long idU, String mailU, String passwd, String pseudoU, String nomU, String prenomU, String numAdrU, String nomAdrU, String cpU, String villeU, long idTU) {
+	public Utilisateur(long idU, String mailU, String pseudoU, String passwd, String nomU, String prenomU, String numAdrU, String nomAdrU, String cpU, String villeU, long idTU) {
 		this.idU = idU;
 		this.mailU = mailU;
 		this.passwd = passwd;
 		this.pseudoU = pseudoU;
-		this.pseudoU = prenomU;
+		this.prenomU = prenomU;
 		this.nomU = nomU;
 		this.numAdrU = numAdrU;
 		this.nomAdrU = nomAdrU;
@@ -118,6 +120,7 @@ public class Utilisateur {
 	}
 
 	public boolean verifPasswd(String mdpClair){
+		Log.d("testLog",this.passwd + " " + BdSQLiteOpenHelper.md5(mdpClair));
 		return (BdSQLiteOpenHelper.md5(mdpClair).equals(this.passwd));
 	}
 }

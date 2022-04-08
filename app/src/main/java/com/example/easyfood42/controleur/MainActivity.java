@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.easyfood42.R;
+import com.example.easyfood42.modele.BdSQLiteOpenHelper;
 import com.example.easyfood42.modele.TypeUtilisateurDAO;
 import com.example.easyfood42.modele.UtilisateurDAO;
 
@@ -33,7 +34,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 utilConnecte = unUtilDAO.getUtilisateurByMail(et_mailU.getText().toString());
-
+                Log.d("testLog","mdp : "+utilConnecte.getPrenomU() + utilConnecte.getMailU());
+                if(utilConnecte != null){
+                    Log.d("testLog","utilisateur pas nul");
+                } else{
+                    Log.d("testLog","utilisateur nul");
+                }
+                if(utilConnecte.verifPasswd(et_passwd.getText().toString())){
+                    Log.d("testLog","passwork ok");
+                } else{
+                    Log.d("testLog","password non ok"+BdSQLiteOpenHelper.md5(et_passwd.getText().toString()));
+                }
                 if (utilConnecte != null && utilConnecte.verifPasswd(et_passwd.getText().toString())){
                     Log.d("testLog","utilisateur reconnu. L'utilisateur connecté est stocké dans utilConnecte");
                     TypeUtilisateurDAO unTUDAO = new TypeUtilisateurDAO(MainActivity.this);
