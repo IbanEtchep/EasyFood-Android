@@ -7,7 +7,7 @@ public class Client extends Utilisateur {
     private String commentaireVisible;
 
     public Client(Utilisateur utilisateur, int noteEasyFood, String commentaireEasyFood, String commentaireVisible) {
-        super(utilisateur.getIdU(), utilisateur.getMailU(), utilisateur.getPseudoU(),utilisateur.getPasswd(),  utilisateur.getNomU(), utilisateur.getPrenomU(), utilisateur.getNumAdrU(), utilisateur.getNomAdrU(), utilisateur.getCpU(), utilisateur.getVilleU(), utilisateur.getIdTU());
+        super(utilisateur.getIdU(), utilisateur.getMailU(), utilisateur.getPseudoU(), utilisateur.getPasswd(),  utilisateur.getNomU(), utilisateur.getPrenomU(), utilisateur.getNumAdrU(), utilisateur.getNomAdrU(), utilisateur.getCpU(), utilisateur.getVilleU(), utilisateur.getIdTU());
         this.noteEasyFood = noteEasyFood;
         this.commentaireEasyFood = commentaireEasyFood;
         this.commentaireVisible = commentaireVisible;
