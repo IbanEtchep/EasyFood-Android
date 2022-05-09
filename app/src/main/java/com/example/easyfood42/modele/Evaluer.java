@@ -1,4 +1,4 @@
-package com.example.easyfood42.controleur;
+package com.example.easyfood42.modele;
 
 public class Evaluer {
     private long idE;

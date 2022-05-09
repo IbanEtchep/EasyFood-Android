@@ -1,12 +1,12 @@
-package com.example.easyfood42.controleur;
+package com.example.easyfood42.modele;
 
 public class Client extends Utilisateur {
 
     private int noteEasyFood;
     private String commentaireEasyFood;
-    private String commentaireVisible;
+    private boolean commentaireVisible;
 
-    public Client(Utilisateur utilisateur, int noteEasyFood, String commentaireEasyFood, String commentaireVisible) {
+    public Client(Utilisateur utilisateur, int noteEasyFood, String commentaireEasyFood, boolean commentaireVisible) {
         super(utilisateur.getIdU(), utilisateur.getMailU(), utilisateur.getPseudoU(), utilisateur.getPasswd(),  utilisateur.getNomU(), utilisateur.getPrenomU(), utilisateur.getNumAdrU(), utilisateur.getNomAdrU(), utilisateur.getCpU(), utilisateur.getVilleU(), utilisateur.getIdTU());
         this.noteEasyFood = noteEasyFood;
         this.commentaireEasyFood = commentaireEasyFood;
@@ -29,11 +29,11 @@ public class Client extends Utilisateur {
         this.commentaireEasyFood = commentaireEasyFood;
     }
 
-    public String getCommentaireVisible() {
+    public boolean getCommentaireVisible() {
         return commentaireVisible;
     }
 
-    public void setCommentaireVisible(String commentaireVisible) {
+    public void setCommentaireVisible(boolean commentaireVisible) {
         this.commentaireVisible = commentaireVisible;
     }
 }

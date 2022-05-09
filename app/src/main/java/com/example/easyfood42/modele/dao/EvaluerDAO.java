@@ -1,9 +1,10 @@
-package com.example.easyfood42.modele;
+package com.example.easyfood42.modele.dao;
 
 import android.content.Context;
 import android.database.Cursor;
 
-import com.example.easyfood42.controleur.Evaluer;
+import com.example.easyfood42.modele.Evaluer;
+import com.example.easyfood42.modele.BdSQLiteOpenHelper;
 
 public class EvaluerDAO {
 

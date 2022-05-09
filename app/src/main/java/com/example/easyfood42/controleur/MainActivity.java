@@ -10,8 +10,10 @@ import android.widget.EditText;
 
 import com.example.easyfood42.R;
 import com.example.easyfood42.modele.BdSQLiteOpenHelper;
-import com.example.easyfood42.modele.TypeUtilisateurDAO;
-import com.example.easyfood42.modele.UtilisateurDAO;
+import com.example.easyfood42.modele.TypeUtilisateur;
+import com.example.easyfood42.modele.Utilisateur;
+import com.example.easyfood42.modele.dao.TypeUtilisateurDAO;
+import com.example.easyfood42.modele.dao.UtilisateurDAO;
 
 public class MainActivity extends AppCompatActivity {
     private Utilisateur utilConnecte;
