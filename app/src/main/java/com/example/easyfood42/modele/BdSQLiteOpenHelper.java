@@ -125,9 +125,9 @@ public class BdSQLiteOpenHelper extends SQLiteOpenHelper {
 
         String mdpChiffre = BdSQLiteOpenHelper.md5("motdepasse");
 
-        db.execSQL("INSERT INTO utilisateur (idU, mailU,passwd,idTU, pseudoU) VALUES (1, 'client1@sio.fr','" + mdpChiffre + "',1, 'Client1');");
-        db.execSQL("INSERT INTO utilisateur (idU,mailU,passwd,idTU, pseudoU) VALUES (2, 'restaurateur1@sio.fr','" + mdpChiffre + "',2, 'Restaurateur1');");
-        db.execSQL("INSERT INTO utilisateur (idU,mailU,passwd,idTU, pseudoU) VALUES (3, 'moderateur1@sio.fr','" + mdpChiffre + "',3, 'Moderateur1');");
+        db.execSQL("INSERT INTO utilisateur (idU, mailU,passwd,idTU, pseudoU, nomU, prenomU, nomAdrU numAdrU, cpU, villeU) VALUES (1, 'client1@sio.fr','" + mdpChiffre + "',1, 'Client1', 'NomClient', 'PrenomClient', 'Avenue Jean Rostand', '4', '64100', 'Bayonne' );");
+        db.execSQL("INSERT INTO utilisateur (idU,mailU,passwd,idTU, pseudoU, nomU, prenomU, nomAdrU numAdrU, cpU, villeU) VALUES (2, 'restaurateur1@sio.fr','" + mdpChiffre + "',2, 'Restaurateur1', 'NomRestaurateur', 'PrenomRestaurateur', 'Avenue Jean Rostand', '4', '64100', 'Bayonne' );");
+        db.execSQL("INSERT INTO utilisateur (idU,mailU,passwd,idTU, pseudoU, nomU, prenomU, nomAdrU numAdrU, cpU, villeU) VALUES (3, 'moderateur1@sio.fr','" + mdpChiffre + "',3, 'Moderateur1', 'NomModerateur', 'PrenomModerateur', 'Avenue Jean Rostand', '4', '64100', 'Bayonne' );");
 
         db.execSQL("INSERT INTO type_plat (idTP, libelleTP) VALUES (1,'viande rouge');");
         db.execSQL("INSERT INTO type_plat (idTP, libelleTP) VALUES (2,'burger');");
