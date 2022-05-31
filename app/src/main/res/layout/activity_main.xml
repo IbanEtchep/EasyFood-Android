@@ -28,4 +28,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Connexion" />
+
+    <TextView
+        android:id="@+id/et_error"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#D81919" />
 </LinearLayout>

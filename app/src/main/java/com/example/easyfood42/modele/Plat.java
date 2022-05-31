@@ -4,13 +4,13 @@ public class Plat {
 
     private long idP;
     private String nomP;
-    private int prixFournisseurP;
-    private String prixClientP;
+    private float prixFournisseurP;
+    private float prixClientP;
     private boolean platVisible;
     private String photoP;
     private String descriptionP;
 
-    public Plat(long idP, String nomP, int prixFournisseurP, String prixClientP, boolean platVisible, String photoP, String descriptionP) {
+    public Plat(long idP, String nomP, float prixFournisseurP, float prixClientP, boolean platVisible, String photoP, String descriptionP) {
         this.idP = idP;
         this.nomP = nomP;
         this.prixFournisseurP = prixFournisseurP;
@@ -36,19 +36,19 @@ public class Plat {
         this.nomP = nomP;
     }
 
-    public int getPrixFournisseurP() {
+    public float getPrixFournisseurP() {
         return prixFournisseurP;
     }
 
-    public void setPrixFournisseurP(int prixFournisseurP) {
+    public void setPrixFournisseurP(float prixFournisseurP) {
         this.prixFournisseurP = prixFournisseurP;
     }
 
-    public String getPrixClientP() {
+    public float getPrixClientP() {
         return prixClientP;
     }
 
-    public void setPrixClientP(String prixClientP) {
+    public void setPrixClientP(float prixClientP) {
         this.prixClientP = prixClientP;
     }
 

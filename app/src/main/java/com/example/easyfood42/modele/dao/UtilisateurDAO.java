@@ -4,63 +4,51 @@ import android.content.Context;
 import android.database.Cursor;
 import android.util.Log;
 
-import com.example.easyfood42.modele.Administrateur;
-import com.example.easyfood42.modele.Client;
-import com.example.easyfood42.modele.Moderateur;
-import com.example.easyfood42.modele.Restaurateur;
-import com.example.easyfood42.modele.Utilisateur;
+import androidx.annotation.Nullable;
+
+import com.example.easyfood42.modele.user.Administrateur;
+import com.example.easyfood42.modele.user.Client;
+import com.example.easyfood42.modele.user.Moderateur;
+import com.example.easyfood42.modele.user.Restaurateur;
+import com.example.easyfood42.modele.user.Utilisateur;
 import com.example.easyfood42.modele.BdSQLiteOpenHelper;
 
-public class UtilisateurDAO {
+public class UtilisateurDAO extends DAO{
 
-    private static String base = "BDeasyfood";
-    private static int version = 1;
-    private BdSQLiteOpenHelper accesBD;
-
-    public UtilisateurDAO(Context ct) {
-        accesBD = new BdSQLiteOpenHelper(ct, base, null, version);
+    public UtilisateurDAO(Context context) {
+        super(context);
     }
 
-    public Utilisateur getUtilisateurByMail(String mailU) {
+    public Utilisateur findByMail(String mailU) {
         Utilisateur unUtil = null;
         //, String nomU, String numAdrU, String nomAdrU, String cpU, String villeU, long idTU) {
         String sql =
                 "select idU, mailU, pseudoU, passwd,  nomU,prenomU, numAdrU, nomAdrU, cpU, villeU, idTu " +
-                        "from utilisateur where mailU='" + mailU + "';";
-        Cursor curseur;
-        curseur = accesBD.getReadableDatabase().rawQuery(sql, null);
-        if (curseur.getCount() > 0) {
-            curseur.moveToFirst();
-            Log.d("testLog", curseur.getLong(0) +
-                    curseur.getString(1) +
-                    curseur.getString(2) +
-                    curseur.getString(3) +
-                    curseur.getString(4) +
-                    curseur.getString(5) +
-                    curseur.getString(6) +
-                    curseur.getString(7) +
-                    curseur.getString(8) +
-                    curseur.getString(9) +
-                    curseur.getLong(10));
-            unUtil = new Utilisateur(
-                    curseur.getLong(0),
-                    curseur.getString(1),
-                    curseur.getString(2),
-                    curseur.getString(3),
-                    curseur.getString(4),
-                    curseur.getString(5),
-                    curseur.getString(6),
-                    curseur.getString(7),
-                    curseur.getString(8),
-                    curseur.getString(9),
-                    curseur.getLong(10)
-            );
-            Log.d("testLog", "--------------------" + unUtil.getPasswd());
+                        "from utilisateur where mailU=?;";
+        try (Cursor cursor = accesBD.getReadableDatabase().rawQuery(sql, new String[] {mailU})) {
+            if (cursor.getCount() > 0) {
+                cursor.moveToFirst();
+                unUtil = new Utilisateur(
+                        cursor.getLong(0),
+                        cursor.getString(1),
+                        cursor.getString(2),
+                        cursor.getString(3),
+                        cursor.getString(4),
+                        cursor.getString(5),
+                        cursor.getString(6),
+                        cursor.getString(7),
+                        cursor.getString(8),
+                        cursor.getString(9),
+                        cursor.getLong(10)
+                );
+                Log.d("testLog", "--------------------" + unUtil.getPasswd());
+                return getTypedUser(unUtil);
+            }
         }
-        return getTypedUser(unUtil);
+        return null;
     }
 
-    private Client getClientByUtilisateur(Utilisateur utilisateur) {
+    private Client findClientByUtilisateur(Utilisateur utilisateur) {
         String sql =
                 "SELECT noteEasyFood, commentaireEasyFood, commentaireVisible " +
                 "FROM utilisateur " +
@@ -81,7 +69,7 @@ public class UtilisateurDAO {
     private Utilisateur getTypedUser(Utilisateur utilisateur) {
         switch ((int) utilisateur.getIdTU()) {
             case 1:
-                return getClientByUtilisateur(utilisateur);
+                return findClientByUtilisateur(utilisateur);
             case 2:
                 return new Restaurateur(utilisateur);
             case 3:

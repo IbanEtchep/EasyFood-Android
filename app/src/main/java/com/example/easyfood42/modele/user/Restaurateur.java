@@ -1,4 +1,4 @@
-package com.example.easyfood42.modele;
+package com.example.easyfood42.modele.user;
 
 public class Restaurateur extends Utilisateur{
 

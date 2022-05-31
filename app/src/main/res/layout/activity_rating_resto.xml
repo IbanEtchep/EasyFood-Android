@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".controleur.RatingRestoActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Respect de la recette"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <RatingBar
+        android:id="@+id/ratingRecipe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="Evaluation respect de la recette"
+        android:numStars="5"
+        android:progressTint="#D69B43"
+        android:rating="0"
+        android:stepSize="1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Esthétique"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <RatingBar
+        android:id="@+id/ratingEsthetic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="Evaluation de l'esthétique"
+        android:numStars="5"
+        android:progressTint="#D69B43"
+        android:rating="0"
+        android:stepSize="1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Coût"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <RatingBar
+        android:id="@+id/ratingCost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="Evaluation du coût"
+        android:numStars="5"
+        android:progressTint="#D69B43"
+        android:rating="0"
+        android:stepSize="1" />v
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Qualité"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <RatingBar
+        android:id="@+id/ratingQuality"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="Evaluation respect de la recette"
+        android:numStars="5"
+        android:progressTint="#D69B43"
+        android:rating="0"
+        android:stepSize="1" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Commentaire"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <EditText
+        android:id="@+id/etComment"
+        android:layout_width="match_parent"
+        android:layout_height="124dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine" />
+
+    <Button
+        android:id="@+id/btnSaveRating"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Valider" />
+
+</LinearLayout>

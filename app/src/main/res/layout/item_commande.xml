@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+    <LinearLayout
+        android:id="@+id/info_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvNomResto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Restaurant"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvNbPlats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Aucun plat" />
+
+        <TextView
+            android:id="@+id/tvDateStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="date • status" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvPrix"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignTop="@id/info_layout"
+        android:layout_alignBottom="@id/info_layout"
+        android:layout_alignParentEnd="true"
+        android:layout_centerInParent="true"
+        android:layout_marginEnd="5dip"
+        android:gravity="center_vertical"
+        android:padding="3dip"
+        android:text="0€"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+</RelativeLayout>

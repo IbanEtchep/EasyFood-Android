@@ -1,7 +1,13 @@
 package com.example.easyfood42.modele;
 
-public class Evaluer {
+import java.util.Date;
+
+public class Evaluation {
+
     private long idE;
+    private long idR;
+    private long idU;
+    private Date date;
     private String commentaire;
     private boolean commentaireVisible;
     private boolean commentaireModere;
@@ -10,23 +16,24 @@ public class Evaluer {
     private int cout;
     private int qualiteNourriture;
 
-    public Evaluer(long idE,String commentaire, int respectRecette, int estetiquePlat, int cout, int qualiteNourriture) {
-        this.idE = idE;
+    public Evaluation(long idR, long idU, Date date, String commentaire, boolean commentaireModere, boolean commentaireVisible, int respectRecette, int estetiquePlat, int cout, int qualiteNourriture) {
+        this.idR = idR;
+        this.idU = idU;
         this.commentaire = commentaire;
-        this.commentaireVisible = false;
-        this.commentaireModere = false;
+        this.commentaireVisible = commentaireVisible;
+        this.commentaireModere = commentaireModere;
         this.respectRecette = respectRecette;
         this.estetiquePlat = estetiquePlat;
         this.cout = cout;
         this.qualiteNourriture = qualiteNourriture;
     }
 
-    public long getIdE() {
-        return idE;
+    public long getIdU() {
+        return idU;
     }
 
-    public void setIdE(long idE) {
-        this.idE = idE;
+    public long getIdR() {
+        return idR;
     }
 
     public String getCommentaire() {
@@ -79,6 +86,14 @@ public class Evaluer {
 
     public int getQualiteNourriture() {
         return qualiteNourriture;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public Date getDate() {
+        return date;
     }
 
     public void setQualiteNourriture(int qualiteNourriture) {

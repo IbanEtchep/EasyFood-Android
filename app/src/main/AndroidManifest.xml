@@ -3,12 +3,24 @@
     package="com.example.easyfood42">
 
     <application
+        android:name=".controleur.EasyFoodApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Easyfood42">
+        <activity
+            android:name=".controleur.RatingRestoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controleur.ViewCommadeActivity"
+            android:exported="false"
+            android:parentActivityName=".controleur.ListCommandesActivity" />
+        <activity
+            android:name=".controleur.ListCommandesActivity"
+            android:exported="false"
+            android:parentActivityName=".controleur.MainActivity" />
         <activity
             android:name=".controleur.MainActivity"
             android:exported="true">

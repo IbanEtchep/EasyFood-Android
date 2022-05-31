@@ -1,4 +1,6 @@
-package com.example.easyfood42.modele;
+package com.example.easyfood42.modele.user;
+
+import com.example.easyfood42.modele.user.Utilisateur;
 
 public class Client extends Utilisateur {
 

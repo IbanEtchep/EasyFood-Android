@@ -1,24 +1,32 @@
 package com.example.easyfood42.modele;
 
-import java.text.DateFormat;
+import com.example.easyfood42.util.DateUtils;
+
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Map;
 
 public class Commande {
+
     private long idC;
-    private Date dateC;
     private String commentaireClientC;
+    private Date dateC;
+    private Date datePrepC;
     private Date dateLivrC;
     private String modeReglementC;
-    private boolean commandePreparee;
+    private Resto resto;
+    private long idU;
+    private Map<Plat, Integer> contenu;
 
-
-    public Commande(long idC, Date dateC, String commentaireClientC, Date dateLivrC, String modeReglementC, boolean commandePreparee) {
+    public Commande(long idC, Date dateC, String commentaireClientC, Date dateLivrC, Date datePrepC, String modeReglementC, Resto resto, long idU) {
         this.idC = idC;
         this.dateC = dateC;
-        this.commentaireClientC = commentaireClientC;
         this.dateLivrC = dateLivrC;
+        this.datePrepC = datePrepC;
+        this.commentaireClientC = commentaireClientC;
         this.modeReglementC = modeReglementC;
-        this.commandePreparee = commandePreparee;
+        this.resto = resto;
+        this.idU = idU;
     }
 
     public long getIdC() {
@@ -27,6 +35,10 @@ public class Commande {
 
     public void setIdC(long idC) {
         this.idC = idC;
+    }
+
+    public long getIdU() {
+        return idU;
     }
 
     public Date getDateC() {
@@ -62,10 +74,71 @@ public class Commande {
     }
 
     public boolean isCommandePreparee() {
-        return commandePreparee;
+        return datePrepC != null;
     }
 
-    public void setCommandePreparee(boolean commandePreparee) {
-        this.commandePreparee = commandePreparee;
+    public boolean isCommandeLivree() {
+        return dateLivrC != null;
+    }
+
+    public Date getDatePrepC() {
+        return datePrepC;
+    }
+
+    public void setDatePrepC(Date datePrepC) {
+        this.datePrepC = datePrepC;
+    }
+
+    public void setContenu(Map<Plat, Integer> contenu) {
+        this.contenu = contenu;
+    }
+
+    public Resto getResto() {
+        return resto;
+    }
+
+    public void setResto(Resto resto) {
+        this.resto = resto;
+    }
+
+    public Map<Plat, Integer> getContenu() {
+        return contenu;
+    }
+
+    public int getQuantity(Plat plat) {
+        if(getContenu().containsKey(plat)) {
+            return getContenu().get(plat);
+        }
+        return 0;
+    }
+
+    public int getNbPlats() {
+        int nbPlats = 0;
+
+        for (Map.Entry<Plat, Integer> entry : contenu.entrySet()) {
+            nbPlats += entry.getValue();
+        }
+
+        return  nbPlats;
+    }
+
+    public int getPrixTotal() {
+        int prixTotal = 0;
+
+        for (Map.Entry<Plat, Integer> entry : contenu.entrySet()) {
+            prixTotal += entry.getValue() * entry.getKey().getPrixClientP();
+        }
+
+        return  prixTotal;
+    }
+
+    public String getStatut() {
+        if(!isCommandePreparee()) {
+            return "En cours de préparation.";
+        }else if(!isCommandeLivree()) {
+            return "En cours de livraison";
+        }else {
+            return "Livré le " + DateUtils.format(dateLivrC);
+        }
     }
 }
