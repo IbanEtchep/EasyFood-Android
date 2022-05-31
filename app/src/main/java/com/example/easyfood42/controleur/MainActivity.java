@@ -39,17 +39,17 @@ public class MainActivity extends AppCompatActivity {
         unUtilDAO = new UtilisateurDAO(this);
 
         b_connexion.setOnClickListener(view -> {
-              utilConnecte = unUtilDAO.findByMail("client1@sio.fr");
-//            utilConnecte = unUtilDAO.findByMail(et_mailU.getText().toString());
-//
-//            if(utilConnecte == null || !utilConnecte.verifPasswd(et_passwd.getText().toString()) ){
-//                if(utilConnecte != null) {
-//                    Log.d("testLog", "MDP : " + (utilConnecte.verifPasswd(et_passwd.getText().toString()) ? "Ok" : "Mauvais") );
-//                }
-//                et_error.setText("L'identifiant ou le mot de passe sont incorrectes.");
-//                utilConnecte = null;
-//                return;
-//            }
+//              utilConnecte = unUtilDAO.findByMail("client1@sio.fr");
+            utilConnecte = unUtilDAO.findByMail(et_mailU.getText().toString());
+
+            if(utilConnecte == null || !utilConnecte.verifPasswd(et_passwd.getText().toString()) ){
+                if(utilConnecte != null) {
+                    Log.d("testLog", "MDP : " + (utilConnecte.verifPasswd(et_passwd.getText().toString()) ? "Ok" : "Mauvais") );
+                }
+                et_error.setText("L'identifiant ou le mot de passe sont incorrectes.");
+                utilConnecte = null;
+                return;
+            }
 
             et_error.setText("");
             Log.d("testLog","Connecté en tant que : "+utilConnecte.getPrenomU() + utilConnecte.getMailU());
